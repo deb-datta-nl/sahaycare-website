@@ -128,14 +128,68 @@ nav.main-nav a:hover {
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+  position: relative;
   color: var(--white);
-  padding: 72px 24px;
+  padding: 96px 24px;
+  overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
 }
 
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+
+.hero-slide.active { opacity: 1; }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(31,77,71,0.88), rgba(47,122,111,0.72));
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+}
+
+.hero-dot.active { background: var(--white); }
+
 .hero-inner {
+  position: relative;
+  z-index: 2;
   max-width: 1120px;
   margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;

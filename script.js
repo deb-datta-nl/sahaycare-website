@@ -21,6 +21,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Hero image carousel
+  var slides = document.querySelectorAll(".hero-slide");
+  var dots = document.querySelectorAll(".hero-dot");
+  if (slides.length > 1) {
+    var current = 0;
+    var rotate = function (index) {
+      slides[current].classList.remove("active");
+      dots[current] && dots[current].classList.remove("active");
+      current = index % slides.length;
+      slides[current].classList.add("active");
+      dots[current] && dots[current].classList.add("active");
+    };
+    var timer = setInterval(function () { rotate(current + 1); }, 5000);
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () {
+        clearInterval(timer);
+        rotate(i);
+        timer = setInterval(function () { rotate(current + 1); }, 5000);
+      });
+    });
+  }
+
   // Contact form -> Web3Forms
   var form = document.getElementById("contact-form");
   if (form) {
