@@ -158,7 +158,8 @@ nav.main-nav a:hover {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(31,77,71,0.88), rgba(47,122,111,0.72));
+  /* Light darkening only, so the photo carousel stays visible behind the text */
+  background: linear-gradient(100deg, rgba(10,20,18,0.58) 0%, rgba(10,20,18,0.32) 45%, rgba(10,20,18,0.15) 100%);
 }
 
 .hero-dots {
