@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
             status.className = "form-status success";
             form.reset();
           } else {
-            status.textContent = "Something went wrong. Please call us instead at +91 7980150103.";
+            status.textContent = "Something went wrong. Please email us instead at info@sahaycare.in.";
             status.className = "form-status error";
           }
         })
         .catch(function () {
-          status.textContent = "Something went wrong. Please call us instead at +91 7980150103.";
+          status.textContent = "Something went wrong. Please email us instead at info@sahaycare.in.";
           status.className = "form-status error";
         });
     });
